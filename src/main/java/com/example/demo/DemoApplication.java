@@ -1,13 +1,13 @@
-package com.example.project4task2;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Project4Task2Application {
+public class DemoApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Project4Task2Application.class, args);
+        SpringApplication.run(DemoApplication.class, args);
     }
 
 }

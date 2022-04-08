@@ -1,0 +1,15 @@
+server:
+  port: 8902
+  servlet:
+    context-path: /dashboard
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://mybase:xKV3J2vm9177@cluster0.1w14j.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      database: dashBoard
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    cache: false
