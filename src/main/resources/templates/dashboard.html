@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Country info Search DashBoard</title>
+    <style type="text/css">
+        .a{
+            margin-left: 20px;
+        }
+        .details {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .details {
+            background: #d9d8d8;
+            font-size: .8em;
+            padding: 1rem 1.5rem;
+            width: 80%;
+        }
+        td{
+            text-align: center;
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6
+        }
+    </style>
+</head>
+<body>
+<div class="container" style="padding-bottom: 50px">
+    <!-- display the result -->
+    <H1 class="a">Country info Search DashBoard</H1>
+    <h5 class="a">Statistics Info: </h5>
+    <div class="details a">
+        <p class="a">Total Number of Search: <span th:text="${totalSearchCount}"></span></p>
+        <p class="a">The number of the most search country: <span th:text="${countByCountry}"></span></p>
+        <p class="a"> counrty of the most search: <span th:text="${country}"></span></p>
+    </div>
+    <h5 class="a">Top 3 Searched Info: </h5>
+    <div class="details a">
+        <p class="a">The Number of Log Data: <span th:text="${totalCount}"></span></p>
+        <p class="a">The most Time of Response from 3rd API (ms): <span th:text="${mostTime}"></span></p>
+        <p class="a">The least Time of Response from 3rd API (ms): <span th:text="${leastTime}"></span></p>
+    </div>
+
+    <h5 class="a">The Logs: </h5>
+    <table id="wmsReceiveOrder_table_id" class="table table-striped table-bordered hover" style="width:100%">
+        <thead>
+        <tr>
+            <th>androidBuildSDK</th>
+            <th>3rd Api time</th>
+            <th>country</th>
+            <th>country code</th>
+            <th>device</th>
+            <th>search time</th>
+            <th>total confirmed</th>
+            <th>total found</th>
+            <th>total missed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dl:${listDash}">
+            <td th:text="${dl.androidVersion}"></td>
+            <td th:text="${dl.apiTime}"></td>
+            <td th:text="${dl.country}"></td>
+            <td th:text="${dl.countryCode}"></td>
+            <td th:text="${dl.devices}"></td>
+            <td th:text="${dl.searchTime}"></td>
+            <td th:text="${dl.totalConfirmed}"></td>
+            <td th:text="${dl.totalFound}"></td>
+            <td th:text="${dl.totalMiss}"></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+</html>
